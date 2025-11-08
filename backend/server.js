@@ -1,13 +1,17 @@
 const express = require("express");
 
 const app = express();
+const dotenv = require('dotenv').config();
 
+const connectDB = require('./config/connectionDB');
 const PORT = process.env.PORT || 3000;
 
+connectDB();
 
-app.get("/", (req,res)=>{
-    res.send("hello world by aimad");
-    });
+app.use(express.json());
+
+
+app.use("/receipe", require('./routes/receipe'));
 app.listen(PORT, () => {
   console.log(`Server is running Mr Aimad on port ${PORT}`);
 });
