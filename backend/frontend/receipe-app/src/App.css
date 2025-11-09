@@ -1,42 +1,120 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+html, body, #root{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.home{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.left h1{
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #ff9560;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.left p{
+    font-size: 22px;
+    margin-top: 10px;
+    color: grey;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.left button {
+    background-color: #ff9560;
+    margin-top: 10px;
+    font-size: 18px;
+    color: white;
+    border: 0;
+    transition: all 0.3s ease;
 }
 
-.card {
-  padding: 2em;
+.left button:hover{
+    background-color: #ff9590;
 }
 
-.read-the-docs {
-  color: #888;
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+
+.navbar .logo img{
+    width: 150px;
+    height: 150px;
+}
+
+.navbar ul{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin-right: 25px;
+}
+
+.navbar ul li {
+    font-size: 20px;
+    padding: 10px;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: #ff9560;
+    font-weight: 500;
+}
+
+.navbar ul li:hover{
+    background-color: #ff9560;
+    border-radius: 7px ;
+
+}
+
+.navbar ul li a:hover{
+    color: white;
+}
+
+
+.receips-container{
+    padding: 2rem;
+    background-color: white;
+    min-height: 100vh;
+}
+
+.cards-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.receipe-card{
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    width: 300px;
+    box-shadow: 0 4px 12px;
+    transition: transform 0.2s ease;
+}
+
+.receipe-card h4{
+    margin-bottom: 0.5rem;
+    color: #ff9560;
+}
+
+.receipe-card h4:hover{
+    color: black;
+}
+
+.receipe-card:hover{
+    transform: translateY(-5px);
+    background-color: #ff9560;
+    color: white;
+}
+
+.receipe-card p, .receipe-card small {
+    margin: 0.2rem 0;
+}
+

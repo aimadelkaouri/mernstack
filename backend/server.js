@@ -10,8 +10,11 @@ connectDB();
 
 app.use(express.json());
 
+const cors = require('cors');
+app.use(cors());
 
 app.use("/receipe", require('./routes/receipe'));
+app.use("/user", require('./routes/user'));
 app.listen(PORT, () => {
   console.log(`Server is running Mr Aimad on port ${PORT}`);
 });
