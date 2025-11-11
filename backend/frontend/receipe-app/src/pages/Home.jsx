@@ -1,8 +1,10 @@
 import React from 'react'
 import "../App.css"
 import AllReceipes from '../components/AllReceipes'
+import { useNavigate } from 'react-router-dom'
 
 function Home() {
+    const navigate = useNavigate();
   return (
     <div>
         <section className='home'>
@@ -13,7 +15,7 @@ function Home() {
                 <p>
                     Join our coumminity of food lovers and share your favorite receipe.
                 </p>
-                <button>Share your receipe</button>
+                <button onClick={()=> navigate('/addReceipe')}>Share your receipe</button>
             </div>
             <div className='right'>
             </div>

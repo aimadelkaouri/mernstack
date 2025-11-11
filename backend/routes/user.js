@@ -21,9 +21,39 @@ router.post('/register', async (req,res)=>{
     await newUser.save();
     let token = jwt.sign({ email, id:newUser._id}, process.env.SECRET_KEY, {expiresIn: "1w"});
     return res.status(201).json({ message: 'User registred successfuly', token, newUser})
+});
+
+
+router.post('/signin', async (req,res)=>{
+    const {email, password } = req.body;
+    if(!email || !password ){
+        return res.status(400).json({ error: 'Email and password are required' });
+    }
+    let user = await User.findOne({ email });
+    if (user && await bcrypt.compare(password, user.password)) {
+       let token = jwt.sign({ email, id:user._id}, process.env.SECRET_KEY, {expiresIn: "1w"});
+    return res.status(201).json({ message: 'User registred successfuly', token, user})
+    }
+    else{
+       return res.status(400).json({ message: 'invalid email or password' }); 
+    }
+   
 
 
 });
+
+
+router.get('/:id', async (req,res)=>{
+    const user = await User.findById(req.params.id);
+    if (!user) {
+        return res.status(404).json({ message: 'User not found' })
+    }
+    res.status(200).json({user})
+});
+
+
+
+
 
 
 

@@ -24,7 +24,7 @@ html, body, #root{
     color: grey;
 }
 
-.left button {
+ button {
     background-color: #ff9560;
     margin-top: 10px;
     font-size: 18px;
@@ -33,7 +33,7 @@ html, body, #root{
     transition: all 0.3s ease;
 }
 
-.left button:hover{
+ button:hover{
     background-color: #ff9590;
 }
 
@@ -118,3 +118,17 @@ html, body, #root{
     margin: 0.2rem 0;
 }
 
+
+.modal-content, .modal-header{
+    border: none !important;
+}
+.error{
+    margin-top: 10px;
+    color: red;
+    font-size: 16px;
+}
+.succes{
+    margin-top: 10px;
+    color: green;
+    font-size: 16px;
+}
